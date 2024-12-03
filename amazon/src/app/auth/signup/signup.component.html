@@ -1,0 +1,140 @@
+<div class="container-fluid w-100 justify-content-center align-items-center">
+
+
+    <div class="container w-50 align-middle border border-success rounded mt-4">
+        <form class="row g-3">
+            <div class="col-md-12">
+                <h1 class="text-center">Register Now!</h1>
+            </div>
+
+            <div class="col-md-6">
+                <label for="firstName" class="form-label">Given Name</label>
+                <input type="text" [class]="classFirstName" id="firstName" [value]="firstName"
+                    (input)="setFirstName($event)" required>
+                <div class="invalid-feedback">
+                    {{ errorFirstName }}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="lastName" class="form-label">Family Name</label>
+                <input type="text" [class]="classLastName" id="lastName" [value]="lastName"
+                    (input)="setLastName($event)" required>
+                <div class="invalid-feedback">
+                    {{ errorLastName }}
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="form-floating mb-3 has-validation">
+                    <input type="date" [class]="classDOB" id="dob" [value]="dob" (input)="setDOB($event)" required>
+                    <label for="dob">Date Of Birth</label>
+                    <div class="invalid-feedback">
+                        {{ errorDOB }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5">
+                <div class="form-floating mb-3 has-validation">
+                    <select [class]="classGender" aria-label="Gender" [value]="gender" (input)="setGender($event)">
+                        <option selected value="">Select a Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="gender">Gender</label>
+
+                    <div class="invalid-feedback">
+                        {{ errorGender }}
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-md-6">
+                <div class="form-floating mb-3 has-validation">
+                    <input type="text" [class]="classUsername" id="username" [value]="username"
+                        (input)="setUserName($event)">
+                    <label for="username">Choose a Username</label>
+
+                    <div class="invalid-feedback">
+                        {{ errorUserName }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-floating mb-3 has-validation">
+                    <select [class]="classType" aria-label="type" [value]="type" (input)="setType($event)">
+                        <option selected value="customer">customer</option>
+                        <option value="seller">seller</option>
+                    </select>
+                    <label for="type">What are you registering as?</label>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-floating mb-3 has-validation">
+                    <input type="password" [class]="classPassword" id="password" [value]="password"
+                        (input)="setPassword($event)">
+                    <label for="password">Password</label>
+
+                    <div class="invalid-feedback">
+                        {{ errorPassword }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-floating mb-3 has-validation">
+                    <input type="text" [class]="classConfirmPassword" id="cnfpassword" [value]="confirm_password"
+                        (input)="setConfirmPassword($event)">
+                    <label for="cnfpassword">Confirm Password</label>
+
+                    <div class="invalid-feedback">
+                        {{ errorConfirmPassword }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input [class]="classAgreed" type="checkbox" value="" id="agreed" (input)="setAgreed()"
+                        aria-describedby="agreed" required>
+                    <label class="form-check-label" for="agreed">
+                        By signing up, I agree to terms and conditions
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-12 text-center mb-3">
+                <button class="btn btn-outline-primary" type="submit" [disabled]="!agreed || loading"
+                    (click)="submitDetails()">
+                    <div *ngIf="loading">
+                        <div class="d-flex">
+                            <p class="mt-1 mb-1">Submitting...</p>&nbsp;
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div *ngIf="!loading">
+                        <p class="mt-1 mb-1">Submit</p>
+                    </div>
+                </button>
+            </div>
+            <div class="col-12 text-center mb-3">
+                <p>If already have an account, <a href="/login">login</a> here </p>
+            </div>
+
+        </form>
+    </div>
+
+</div>

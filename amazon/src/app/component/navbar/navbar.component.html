@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+        <a class="navbar-brand d-flex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_nike_principal.jpg" alt="Bootstrap" width="30" height="24">
+            <span>Amajon</span>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img [src] = "profilePic"
+                        class="rounded-circle"
+                        alt = "Profile" width = "30" height = "24">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><p class="dropdown-item"
+                            style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Welcome, {{ username }} </p></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+                        <li *ngIf="type == 'seller'"><a  class="dropdown-item" href="/additem">Add Item</a></li>
+                        <li><a class="dropdown-item" href="#">My Cart</a></li>
+                        <li><a class="dropdown-item" href="#">My Orders</a></li>
+                        
+                        <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+            <form class="d-flex" role="search">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button> -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img [src] = "profilePic"
+                            class="rounded-circle"
+                            alt = "Profile" width = "30" height = "24">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><p class="dropdown-item"
+                                style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Welcome, {{ username }} </p></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+                            <li *ngIf="type == 'seller'"><a  class="dropdown-item" href="/additem">Add Item</a></li>
+                            <li><a class="dropdown-item" href="#">My Cart</a></li>
+                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                            
+                            <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </form>
+        </div>
+    </div>
+</nav>
